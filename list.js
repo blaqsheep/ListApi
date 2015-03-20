@@ -12,7 +12,7 @@ var List = function() {
 
   // Add a data item to the front of the list
   this.add = function(elem) {
-    //this.item = new ListItem(elem, this.item)
+    this.item = new ListItem(elem, this.item)
   }
 
   // Returns true if the list is empty
@@ -24,8 +24,13 @@ var List = function() {
   // the list is empty, return null. This leaves
   // the list unmodified
   this.head = function() {
-    // ......
+   // ......
+  if (this.empty()){
     return null
+  }
+    else{
+      return this.item.data
+    }
   }
 
   // Remove item off the head of the list and return
@@ -33,21 +38,37 @@ var List = function() {
   // next element in the list if it exists. If the
   // list is empty, we return null
   this.pop = function() {
-    // ......
-    return null
+    if(this.item === null){
+      return null
+    }
+    else{
+      var list = this.item.data
+      this.item = this.item.tail
+      return list
+    }
   }
 
   // Return the number of elements in the list.
   this.length = function() {
-    // ......
-    return -1
+    var count = 0    // ......
+    var temp = this.item
+
+      while(temp !=null){
+        count ++
+        temp = temp.tail
+      }
+    return count
   }
 
   // Return the last data item in the list if it exists. If
   // not, return null
   this.last = function() {
-    // ......
+   if(this.item!=null){
+    return this.item.tail.tail.data
+   }
+   else{ 
     return null
+        }
   }
 }
 

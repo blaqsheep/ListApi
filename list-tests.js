@@ -27,6 +27,15 @@ QUnit.test("Head of the list contains most recent addition", function (assert) {
   assert.equal(l.head(),"d")
 });
 
+QUnit.test("Returns the correct length of a list no pop", function (assert) {
+  var l = new List()
+  assert.equal(l.length(), 0)
+  l.add("a")
+  l.add("b")
+  l.add("c")
+  assert,equal(l.length(),3)
+  
+});
 
 QUnit.test("Returns the correct length of a list", function (assert) {
   var l = new List()
