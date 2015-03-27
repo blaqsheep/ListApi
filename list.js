@@ -25,13 +25,13 @@ var List = function() {
   // the list unmodified
   this.head = function() {
    // ......
-  if (this.empty()){
+   if (this.empty()){
     return null
   }
-    else{
-      return this.item.data
-    }
+  else{
+    return this.item.data
   }
+}
 
   // Remove item off the head of the list and return
   // its value. The new head of the list must be the
@@ -53,10 +53,10 @@ var List = function() {
     var count = 0    // ......
     var temp = this.item
 
-      while(temp !=null){
-        count ++
-        temp = temp.tail
-      }
+    while(temp !=null){
+      count ++
+      temp = temp.tail
+    }
     return count
   }
 
@@ -65,10 +65,10 @@ var List = function() {
   this.last = function() {
    if(this.item!=null){
     return this.item.tail.tail.data
-   }
-   else{ 
-    return null
-        }
   }
+  else{ 
+    return null
+  }
+}
 }
 
