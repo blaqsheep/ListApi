@@ -69,6 +69,27 @@ var List = function() {
   else{ 
     return null
   }
+
+   // In place sort of the list from smallest to largest
+  this.sort = function() {
+      var swapped;
+      var temp = '';
+      do {
+          swapped = false;
+          for(var i = 0; i < List.length -1; i ++){
+            if(List[i]>List[i+1]){
+              var temp = List[i]
+              List[i] = List[i+1];
+              List[i+1] = temp;
+              swapped = true;
+            }
+          }
+      }while (swapped);
+    //........
+  }
+}this.sort(List);
+console.log(List);
 }
 }
+
 

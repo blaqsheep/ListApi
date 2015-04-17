@@ -87,3 +87,19 @@ QUnit.test("Returns the last element in the list", function (assert) {
   assert.equal(l.last(),"a")
   assert.equal(l.length(), 3)
 });
+
+QUnit.test("Sorts a list alphabetically", function(assert) {
+  var l = new List()
+  l.sort() // Must not fail on empty list
+  assert.equal(l.last(), null)
+  l.add("c")
+  l.add("a")
+  l.add("b")
+  l.add("a")
+  l.sort()
+  assert.equal(l.pop(),"a")
+  assert.equal(l.pop(),"a")
+  assert.equal(l.pop(),"b")
+  assert.equal(l.pop(),"c")
+
+});
